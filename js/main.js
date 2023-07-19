@@ -1,6 +1,7 @@
 
 const controle = document.querySelectorAll('[data-controle]');
 const estatisticas = document.querySelectorAll('[data-estatistica]')
+
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -44,10 +45,13 @@ controle.forEach((elemento) => {
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector('[data-contador]')
+    const btn = document.querySelectorAll('[btn-desativo'])
 
     if (operacao === "-") {
         if (peca.value > 0) {
             peca.value = parseInt(peca.value) - 1;
+        }else{
+            btn.disabled = true;
         }
     } else {
         peca.value = parseInt(peca.value) + 1
