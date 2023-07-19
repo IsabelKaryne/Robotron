@@ -45,13 +45,13 @@ controle.forEach((elemento) => {
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector('[data-contador]')
-    const btn = document.querySelectorAll('[btn-desativo'])
+    const btn = document.querySelectorAll('.btn-desativo')
 
     if (operacao === "-") {
         if (peca.value > 0) {
             peca.value = parseInt(peca.value) - 1;
         }else{
-            btn.disabled = true;
+            //btn.disabled = true;
         }
     } else {
         peca.value = parseInt(peca.value) + 1
